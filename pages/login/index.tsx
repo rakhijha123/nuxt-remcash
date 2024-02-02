@@ -1,11 +1,14 @@
 import BackgroundImage from "@/assets/svg/bg_glob.svg";
 import RamecashLogo from "@/assets/svg/logo01.svg";
+import Wallet from "@/assets/svg/wallet.svg";
+import PayBills from "@/assets/svg/pay_bills.svg";
+import MoneyTransfer from "@/assets/svg/instant_money_tranfer.svg";
 export default defineComponent({
     render() {
         return <div class="main_login">
            <div class="main_login_left">
             <div class="main_login_left-top">
-
+               <img src={Wallet} alt="" />
             </div>
             <div class="main_login_left-bottom">
                

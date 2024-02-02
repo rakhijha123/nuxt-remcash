@@ -5,13 +5,18 @@
   min-height: 100vh;
   &_left {
     flex: 0.3;
-    background: linear-gradient(0deg, var(--bg-secondary) 0%, var(--bg-primary) 50%, var(--bg-secondary) 100%);
+    background: linear-gradient(0deg, var(--bg-secondary) 0%, var(--bg-primary) 40%,var(--bg-secondary) 60%, var(--bg-secondary) 100%);
   }
   &_left-top{
-     height: 50%;
-     border: 1px solid red;
-     border-radius: 0 0 50% 50%;
-     background: linear-gradient(0deg, rgba(229,229,229,1) 0%, rgba(225,227,228,1) 74%, rgba(225,227,228,1) 79%, rgba(224,226,228,1) 95%);
+     height: 60%;
+     position: relative;
+     clip-path: circle(100.7% at 50% -10%);
+     background: radial-gradient(circle farthest-side at top center, transparent 50%, rgb(255, 255, 255,0) 0%,rgb(255, 255, 255,0) 50%, rgba(55, 182, 211, 0.12) 65%,rgba(177, 46, 221, 0.05) 84%,  rgb(158, 205, 212,0.5) 100%);
+     z-index: 1;
+  }
+  &_left-top img{
+    @include absCenter;
+    margin-top: 50px;
   }
   &_right {
     background-color: var(--bg-primary);
