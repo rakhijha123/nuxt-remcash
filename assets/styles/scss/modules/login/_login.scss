@@ -19,7 +19,7 @@
   &_left-bottom{
     text-align: center;
     padding: 80px 0 0 0;
-    width: 273px;
+    width: 280px;
     margin: 0 auto;
   }
   &_left-bottom h2{
@@ -111,3 +111,11 @@
   }
 }
 
+.fade-in-image {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1; /* Ensure the initial state is fully opaque */
+}
+
+.fade-in-image[data-transitioning] {
+  opacity: 0;
+}

@@ -18,6 +18,7 @@
     "vuetify": "^3.5.2"
   },
   "dependencies": {
+    "@egjs/vue3-flicking": "^4.11.2",
     "@mdi/font": "^7.4.47"
   }
 }
