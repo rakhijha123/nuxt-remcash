@@ -15,7 +15,6 @@
   &_left-top img{
     @include absCenter;
     margin-top: 30px;
-    animation: ism-fadein 6s infinite;
   }
   &_left-bottom{
     text-align: center;
@@ -112,15 +111,3 @@
   }
 }
 
-
-@keyframes ism-fadein {
-  0%{
-    opacity: 0.3;
-  }
-  50%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0.3;
-  }
-}
