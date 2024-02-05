@@ -11,7 +11,8 @@ export default defineComponent({
                <img src={Wallet} alt="" />
             </div>
             <div class="main_login_left-bottom">
-               
+               <h2>Pay the bills easily</h2>
+               <p>Remcash provides a fully secure digital wallet to ease everyday transaction</p>
             </div>
            </div>
            <div class="main_login_right">
