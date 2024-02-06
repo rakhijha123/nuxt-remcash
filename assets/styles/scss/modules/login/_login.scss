@@ -5,6 +5,9 @@
   &_left {  
     flex: 0.3;
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(91,172,172,0.1) 52%, rgba(136,205,215,0.1) 54%, rgba(255,255,255,1) 100%);
+    @include respond(tab){
+     display: none;
+     }
   }
   &_left-top{
      height: 50%;
@@ -14,7 +17,7 @@
   }
   &_left-top img{
     @include absCenter;
-    margin-top: 30px;
+    margin-top: 2rem;
   }
   &_left-bottom{
     text-align: center;
@@ -36,6 +39,9 @@
     box-shadow: rgba(100, 100, 111, 0.3) 0px 0px 24px 5px;
     flex: 0.7;
     position: relative;
+    @include respond(tab){
+      flex: 1;
+     }
   }
   &_form {
     @include absCenter();

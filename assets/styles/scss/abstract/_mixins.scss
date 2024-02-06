@@ -39,3 +39,18 @@
 @mixin headingSm() {
   background-color: var(--color-w-f);
 }
+
+// break points
+
+@mixin respond($breakpoint){
+  @if $breakpoint == mobile {
+      @media (max-width:47.93em) { //600px
+          @content
+      }
+  };
+  @if $breakpoint == tab {
+      @media (max-width:63.93em) { // 900px
+          @content
+      }
+  };
+}
