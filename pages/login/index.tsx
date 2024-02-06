@@ -8,7 +8,7 @@ import { useRouter } from "vue-router";
 
 export default defineComponent({
   setup() {
-    // router 
+    // router
     const router = useRouter();
     // left box carousel content
     const leftScrollContent = reactive([
@@ -33,28 +33,26 @@ export default defineComponent({
     ]);
     // carosel conttent reference variable
     const leftScrollContentPosition = ref(0);
+    // login payload parameters
+    const userCred = ref({
+      user_id: "",
+      user_password: "",
+    });
     // carousel content method
     const leftScroll = () => {
       // Add data attribute to trigger transition
       leftScrollContentPosition.value =
         (leftScrollContentPosition.value + 1) % leftScrollContent.length;
     };
-    // login payload parameters
-    const userCred = ref(
-      {
-        user_id:"",
-        user_password:""
-      }
-    );
     // Login form
-    const loginForm = (e:any) =>{
+    const loginForm = (e: any) => {
       e.preventDefault();
-      console.log(userCred.value)
-    }
+      console.log(userCred.value);
+    };
     // Forgot password
-    const forgotPassword = () =>{
+    const forgotPassword = () => {
       router.push("/forgot password");
-    }
+    };
     onMounted(() => {
       const intervalId = setInterval(leftScroll, 5000); // Change image every 5000 milliseconds (5 seconds)
       // Clear the interval when the component is unmounted
@@ -62,7 +60,13 @@ export default defineComponent({
         clearInterval(intervalId);
       });
     });
-    return { leftScrollContent, leftScrollContentPosition, userCred, loginForm, forgotPassword };
+    return {
+      leftScrollContent,
+      leftScrollContentPosition,
+      userCred,
+      loginForm,
+      forgotPassword,
+    };
   },
   render() {
     return (
@@ -100,16 +104,31 @@ export default defineComponent({
               <p>(Please fill the information below)</p>
             </div>
             {/*Login form*/}
-            <form onSubmit={(e)=> this.loginForm(e)}>
+            <form onSubmit={(e) => this.loginForm(e)}>
               <label>Phone number</label>
-              <input type="text" class="main_login_input" v-model={this.userCred.user_id}/>
+              <input
+                type="text"
+                class="main_login_input"
+                v-model={this.userCred.user_id}
+              placeholder="For example: 49570350469"
+              />
               <label>Password</label>
-              <input type="password" class="main_login_input" v-model={this.userCred.user_password}/>
+              <input
+                type="password"
+                class="main_login_input"
+                v-model={this.userCred.user_password}
+                placeholder="Your password…"
+              />
               <button>Log into your account</button>
             </form>
-            <p class="main_login_forgotpassword" onClick={this.forgotPassword}>Forgot password?</p>
+            <p class="main_login_forgotpassword" onClick={this.forgotPassword}>
+              Forgot password?
+            </p>
             <p class="main_login_reg-login">
-              Don't have an account? <span><NuxtLink to="/signup">Rigister here</NuxtLink></span>
+              Don't have an account?{" "}
+              <span>
+                <NuxtLink to="/signup">Rigister here</NuxtLink>
+              </span>
             </p>
           </div>
           <div class="main_login_background">
