@@ -3,10 +3,14 @@ import RamecashLogo from "@/assets/svg/logo01.svg";
 import Wallet from "@/assets/svg/wallet.svg";
 import PayBills from "@/assets/svg/pay_bills.svg";
 import MoneyTransfer from "@/assets/svg/instant_money_tranfer.svg";
+import NuxtLink from "~/plugins/nuxt-link";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
   setup() {
-    const imageRef = ref<HTMLImageElement | null>(null);
+    // router 
+    const router = useRouter();
+    // left box carousel content
     const leftScrollContent = reactive([
       {
         img: Wallet,
@@ -27,13 +31,30 @@ export default defineComponent({
           "With Remcash, paying bills is quick and easy, fully secure and convenient",
       },
     ]);
+    // carosel conttent reference variable
     const leftScrollContentPosition = ref(0);
+    // carousel content method
     const leftScroll = () => {
       // Add data attribute to trigger transition
       leftScrollContentPosition.value =
         (leftScrollContentPosition.value + 1) % leftScrollContent.length;
-      const img = document.querySelector(".leftImage");
     };
+    // login payload parameters
+    const userCred = ref(
+      {
+        user_id:"",
+        user_password:""
+      }
+    );
+    // Login form
+    const loginForm = (e:any) =>{
+      e.preventDefault();
+      console.log(userCred.value)
+    }
+    // Forgot password
+    const forgotPassword = () =>{
+      router.push("/forgot password");
+    }
     onMounted(() => {
       const intervalId = setInterval(leftScroll, 5000); // Change image every 5000 milliseconds (5 seconds)
       // Clear the interval when the component is unmounted
@@ -41,12 +62,11 @@ export default defineComponent({
         clearInterval(intervalId);
       });
     });
-    return { leftScrollContent, leftScrollContentPosition };
+    return { leftScrollContent, leftScrollContentPosition, userCred, loginForm, forgotPassword };
   },
   render() {
     return (
       <div class="main_login">
-       
         <div class="main_login_left">
           <div class="main_login_left-top">
             <img
@@ -79,16 +99,17 @@ export default defineComponent({
               <h2>Log in</h2>
               <p>(Please fill the information below)</p>
             </div>
-            <form>
+            {/*Login form*/}
+            <form onSubmit={(e)=> this.loginForm(e)}>
               <label>Phone number</label>
-              <input type="text" class="main_login_input" />
+              <input type="text" class="main_login_input" v-model={this.userCred.user_id}/>
               <label>Password</label>
-              <input type="password" class="main_login_input" />
+              <input type="password" class="main_login_input" v-model={this.userCred.user_password}/>
               <button>Log into your account</button>
             </form>
-            <p class="main_login_forgotpassword">Forgot password ?</p>
+            <p class="main_login_forgotpassword" onClick={this.forgotPassword}>Forgot password?</p>
             <p class="main_login_reg-login">
-              Don't have an account? <span>Rigister here</span>
+              Don't have an account? <span><NuxtLink to="/signup">Rigister here</NuxtLink></span>
             </p>
           </div>
           <div class="main_login_background">

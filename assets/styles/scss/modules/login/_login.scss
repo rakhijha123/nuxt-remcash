@@ -5,8 +5,11 @@
   &_left {  
     flex: 0.3;
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(91,172,172,0.1) 52%, rgba(136,205,215,0.1) 54%, rgba(255,255,255,1) 100%);
+    @include transiton3(all,0.5,ease);
     @include respond(tab){
-     display: none;
+      opacity: 0;
+      width: 0;
+      flex: 0;
      }
   }
   &_left-top{
@@ -17,7 +20,7 @@
   }
   &_left-top img{
     @include absCenter;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   &_left-bottom{
     text-align: center;
@@ -39,6 +42,7 @@
     box-shadow: rgba(100, 100, 111, 0.3) 0px 0px 24px 5px;
     flex: 0.7;
     position: relative;
+    @include transiton3(flex,0.3,ease);
     @include respond(tab){
       flex: 1;
      }
@@ -97,6 +101,7 @@
     width: 100%;
     text-align: center;
     padding: 20px 0;
+    cursor: pointer;
   }
   &_reg-login{
     width: 100%;
@@ -117,11 +122,3 @@
   }
 }
 
-.fade-in-image {
-  transition: opacity 0.5s ease-in-out;
-  opacity: 1; /* Ensure the initial state is fully opaque */
-}
-
-.fade-in-image[data-transitioning] {
-  opacity: 0;
-}
