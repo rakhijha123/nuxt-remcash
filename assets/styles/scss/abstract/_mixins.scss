@@ -66,3 +66,11 @@
   -o-transition: $property $time + s $moment;
   transition: $property $time + s $moment;
 }
+
+// diaplsy column center
+
+@mixin displayColumnCenter(){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

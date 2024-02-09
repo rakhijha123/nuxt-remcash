@@ -21,5 +21,5 @@ export default defineNuxtConfig({
       },
     },
   },
-  css:["@/assets/styles/scss/main.scss"]
+  css:["@/assets/styles/scss/main.scss","@fortawesome/fontawesome-svg-core/styles.css"]
 })
