@@ -4,18 +4,21 @@
     left: 0;
     width: 250px;
     height: 100vh;
-    background: rgba(255, 255, 255, 1);
+    background: var(--color-white);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-size: 18px;
     transition: all 0.3s ease;
+    z-index: 2;
     &-inactive{
         width: 55px;
         overflow: hidden;
+        @include respond(mobile){
+            width: 0;
+        }
     }
     &-item{
-        // border: 1px solid blue; 
         min-height: 64px;
         padding:20px 0 0 18px;
         box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
@@ -53,9 +56,9 @@
         }
     }
     &-top{
-        flex: 0.8;
         display: flex;
-        padding-top: 120px;
+        padding-top: 140px;
+        height: max-content;
         flex-direction: column;
         overflow: scroll;
         overflow-x: hidden;
@@ -63,9 +66,7 @@
         -ms-overflow-style:none;
     }
     &-bottom{
-        flex:0.2;
-        position: absolute;
-        bottom: 0;
+        height: max-content;
         width: 100%;
     }
 }

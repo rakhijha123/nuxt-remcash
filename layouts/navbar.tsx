@@ -27,6 +27,7 @@ export default defineComponent({
             onChange={(e) => {
               const target = e.target as HTMLInputElement;
               this.sidebar = target.checked;
+              console.log(useSidebar().value)
             }}
           />
           <label for="navSidebar" class="navbar-sidebar-label">

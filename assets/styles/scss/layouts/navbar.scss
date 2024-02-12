@@ -3,12 +3,12 @@
     height: 80px;
     display: flex;
     justify-content: space-between;
-    background-color: var(--color-white-l);
+    background-color: var(--color-white);
     position: relative;
+    z-index: 3;
     &-sidebar{
         position:relative;
         margin:auto 15px;
-        // border: 1px solid red;
         input{
             display: none;
         };
@@ -17,7 +17,11 @@
             padding: 0;
         }
         input:checked ~ label{
-            padding: 0 0 0 190px;
+            // moving the navbar bars
+            // padding: 0 0 0 190px;
+            @include respond(mobile){
+                padding: 0;
+            }
         }
         svg{
             font-size: 28px;
