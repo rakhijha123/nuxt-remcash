@@ -59,6 +59,8 @@
         flex-direction: column;
         overflow: scroll;
         overflow-x: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style:none;
     }
     &-bottom{
         flex:0.2;
