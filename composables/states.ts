@@ -1,1 +1,1 @@
-export const useSidebar = () => useState('active',()=> true);
+export const useSidebar = () => useState('active',()=> false);
