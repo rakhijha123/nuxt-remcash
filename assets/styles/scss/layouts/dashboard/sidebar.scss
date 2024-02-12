@@ -1,0 +1,69 @@
+.dashboard-sidebar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    &-inactive{
+        width: 55px;
+        overflow: hidden;
+    }
+    &-item{
+        // border: 1px solid blue; 
+        min-height: 64px;
+        padding:20px 0 0 18px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+        display: flex;
+        gap:15px;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+        span:nth-child(1){
+            width: 30px;
+            height: max-content;
+        }
+        span:nth-child(2){
+            font-weight: 400;
+           transform: scale(1);
+           transition: transform 0.3s ease;
+        }
+        svg{
+            font-size: 20px;
+            color: var(--color-dark-light);
+            transition: color 0.3s ease;
+        }
+        &:hover{
+            box-shadow:none;
+            background-color: var(--color-blue-5);
+        }
+        &:hover svg{
+            color: var(--color-blue);
+        }
+        &:hover span:nth-child(2){
+            transform: scale(1.1);
+            font-weight: 500;
+        }
+        &-heading{
+            display: none;
+        }
+    }
+    &-top{
+        flex: 0.8;
+        display: flex;
+        padding-top: 120px;
+        flex-direction: column;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    &-bottom{
+        flex:0.2;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}

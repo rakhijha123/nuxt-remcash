@@ -3,23 +3,24 @@
     height: 80px;
     display: flex;
     justify-content: space-between;
-    &-backbutton{
-        width: 35px;
-        height: 35px;
-        border: 1.5px solid rgba(230, 230, 230, 1);
-        display: flex;
-        margin: 20px 15px;
-        border-radius: 7px;
-        cursor: pointer;
-        span{
-            svg{
-                padding: 7.5px 10px;
-            }
-            p{
-                position: relative;
-                top: -30px;
-                left:50px;
-            }
+    background-color: var(--color-white-l);
+    position: relative;
+    &-sidebar{
+        margin:auto 15px;
+        // border: 1px solid red;
+        input{
+            display: none;
+        };
+        label{
+            transition: all 0.5s ease;
+            padding: 0;
+        }
+        input:checked ~ label{
+            padding: 0 0 0 190px;
+        }
+        svg{
+            font-size: 28px;
+            cursor: pointer;
         }
     }
     &-user{
