@@ -26,7 +26,9 @@ export default defineComponent({
             id="navSidebar"
             onChange={(e) => {
               const target = e.target as HTMLInputElement;
-              this.sidebar = target.checked;
+              if(window.innerWidth <= 768){
+                this.sidebar = target.checked;
+              }
               console.log(useSidebar().value)
             }}
           />
