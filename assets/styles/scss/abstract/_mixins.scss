@@ -27,7 +27,7 @@
 // large heading text
 @mixin headingLg($color) {
   color: $color;
-  font-size: 35px;
+  font-size: 2.8rem;
   font-weight: 700;
   letter-spacing: -2px;
 }
@@ -73,4 +73,25 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+};
+
+// diaplsy column center
+
+@mixin displayRowCenter(){
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@mixin button1($width,$height,$size,$weight,$padding-bt,$background,$color){
+  width: $width;
+  height: $height;
+  padding:5px $padding-bt+px;
+  background-color: $background;
+  border-radius: 7px;
+  color: $color;
+  font-size: $size + rem;
+  font-weight: $weight;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }

@@ -62,9 +62,14 @@ export default defineComponent({
         },
       ],
     });
+    const active = ref("Home");
+    watch(active,()=>{
+      sidebar.value = false;
+    })
     return {
       context,
-      sidebar
+      sidebar,
+      active
     };
   },
   render() {
@@ -73,24 +78,26 @@ export default defineComponent({
         <div class="dashboard-sidebar-top">
           {this.context.top.map((item) => {
             return (
-              <div key={item.name} class="dashboard-sidebar-item">
+              <button key={item.name} class="dashboard-sidebar-item" onClick={()=>{
+                this.active = item.name;
+              }}>
                 <span>
                   <FontAwesomeIcon icon={item.icon} />
                 </span>
                 <span class={this.sidebar ? "" : "dashboard-sidebar-item-heading"}>{item.name}</span>
-              </div>
+              </button>
             );
           })}
         </div>
         <div class="dashboard-sidebar-bottom">
           {this.context.bottom.map((item) => {
             return (
-              <div key={item.name} class="dashboard-sidebar-item">
+              <button key={item.name} class="dashboard-sidebar-item">
                <span>
                   <FontAwesomeIcon icon={item.icon} />
                 </span>
                 <span class={this.sidebar ? "" : "dashboard-sidebar-item-heading"}>{item.name}</span>
-              </div>
+              </button>
             );
           })}
         </div>
