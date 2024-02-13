@@ -64,7 +64,12 @@ export default defineComponent({
     });
     const active = ref("Home");
     watch(active,()=>{
-      sidebar.value = false;
+      if(window.innerWidth <= 768){
+        sidebar.value = false;
+      }
+    });
+    watch(sidebar,()=>{
+      console.log(sidebar.value)
     })
     return {
       context,

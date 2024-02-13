@@ -20,21 +20,21 @@ export default defineComponent({
     return (
       <div class="navbar">
         <div class="navbar-sidebar">
-          <input
+          {/* <input
             type="checkbox"
             name=""
             id="navSidebar"
             onChange={(e) => {
               const target = e.target as HTMLInputElement;
-              if(window.innerWidth <= 768){
-                this.sidebar = target.checked;
-              }
+              this.sidebar = target.checked;
               console.log(useSidebar().value)
             }}
-          />
+          /> */}
           <label for="navSidebar" class="navbar-sidebar-label">
-            <span>
-            <FontAwesomeIcon icon={ this.sidebar ? faBarsStaggered : faBars} />
+            <span onClick={()=>{
+              this.sidebar = !this.sidebar
+            }}>
+              <FontAwesomeIcon icon={this.sidebar ? faBarsStaggered : faBars}/>
             </span>
           </label>
         </div>

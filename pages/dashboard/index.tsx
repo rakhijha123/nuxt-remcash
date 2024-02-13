@@ -95,7 +95,7 @@ export default defineComponent({
     return (
       <div class="dashboard">
         <Sidebar />
-        <Navbar />
+        <Navbar class="dashboard-navbar"/>
         {/* dashboard componentt */}
         <div
           class={
