@@ -1,3 +1,4 @@
+import { Bar } from 'vue-chartjs';
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
@@ -21,5 +22,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  css:["@/assets/styles/scss/main.scss","@fortawesome/fontawesome-svg-core/styles.css"]
+  css:["@/assets/styles/scss/main.scss","@fortawesome/fontawesome-svg-core/styles.css"],
+  plugins: ['@/plugins/chart.ts'],
 })

@@ -83,10 +83,10 @@
   justify-content: center;
 }
 
-@mixin button1($width,$height,$size,$weight,$padding-bt,$background,$color){
+@mixin button1($width,$height,$size,$weight,$padding-tb,$padding-bt,$background,$color){
   width: $width;
   height: $height;
-  padding:5px $padding-bt+px;
+  padding:$padding-tb+px $padding-bt+px;
   background-color: $background;
   border-radius: 7px;
   color: $color;
