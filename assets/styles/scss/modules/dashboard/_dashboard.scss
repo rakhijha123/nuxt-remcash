@@ -45,6 +45,7 @@
                 @include headingLg(var(--color-dark-m));
                 @include respond(mobile){
                     font-size: 2rem;
+                    letter-spacing: -0.5px;
                   }
             }
             @include respond(mobile){
