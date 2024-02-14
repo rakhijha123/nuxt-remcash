@@ -12,10 +12,12 @@ import {
   faRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 import {useSidebar} from "@/composables/states";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
   setup(props, ctx) {
     const sidebar = useSidebar();
+    const router = useRouter();
     const context = reactive({
       top: [
         {
@@ -66,6 +68,9 @@ export default defineComponent({
     watch(active,()=>{
       if(window.innerWidth <= 768){
         sidebar.value = false;
+      };
+      if(active.value === "Log Out"){
+        router.push("/login")
       }
     });
     watch(sidebar,()=>{
@@ -74,7 +79,8 @@ export default defineComponent({
     return {
       context,
       sidebar,
-      active
+      active,
+      router
     };
   },
   render() {
@@ -97,7 +103,9 @@ export default defineComponent({
         <div class="dashboard-sidebar-bottom">
           {this.context.bottom.map((item) => {
             return (
-              <button key={item.name} class="dashboard-sidebar-item">
+              <button key={item.name} class="dashboard-sidebar-item" onClick={()=>{
+               this.router.push("/login")
+              }}>
                <span>
                   <FontAwesomeIcon icon={item.icon} />
                 </span>

@@ -17,28 +17,30 @@ export default defineComponent({
   },
   setup(props, ctx) {
     const sidebar = useSidebar();
-    const chartData = ref({
-      labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug'],
-      datasets: [
-        {
-          label: "Sent",
-          backgroundColor: 'rgba(65, 114, 228, 1)',
-          borderColor: 'rgba(65, 114, 228, 1)',
-          data: [60, 80, 50, 80, 40], // Bar 1 data for each month
-
-        },
-        {
-          label: "Recive",
-          backgroundColor: 'rgba(119, 189, 255, 1)',
-          borderColor: 'rgba(0, 123, 255, 1)',
-          data: [40, 60, 40, 60, 60], // Bar 2 data for each month
-        },
-      ],
-    });
-    const chartOptions = ref({
-      responsive: true,
-      maintainAspectRatio: false
-    });
+    const barData = ref({
+      chartData:{
+        labels: ['Apr', 'May', 'Jun', 'Jul', 'Aug'],
+        datasets: [
+          {
+            label: "Sent",
+            backgroundColor: 'rgba(65, 114, 228, 1)',
+            borderColor: 'rgba(65, 114, 228, 1)',
+            data: [60, 80, 50, 80, 40], // Bar 1 data for each month
+  
+          },
+          {
+            label: "Recive",
+            backgroundColor: 'rgba(119, 189, 255, 1)',
+            borderColor: 'rgba(0, 123, 255, 1)',
+            data: [40, 60, 40, 60, 60], // Bar 2 data for each month
+          },
+        ],
+      },
+      chartOptions:{
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    })
     const pieData = reactive({
       chartData: {
         // labels: ['Completed', 'Remaining'],
@@ -86,9 +88,8 @@ export default defineComponent({
     return {
       sidebar,
       cardsList,
-      chartData,
-      chartOptions,
-      pieData
+      pieData,
+      barData
     };
   },
   render() {
@@ -145,8 +146,8 @@ export default defineComponent({
             </div>
             <div class="dashboard-graph-bar">
               <Bar
-                data={this.chartData}
-                options={this.chartOptions}
+                data={this.barData.chartData}
+                options={this.barData.chartOptions}
               />
             </div>
           </div>

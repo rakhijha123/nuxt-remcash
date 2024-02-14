@@ -66,6 +66,7 @@ export default defineComponent({
       userCred,
       loginForm,
       forgotPassword,
+      router
     };
   },
   render() {
@@ -119,7 +120,9 @@ export default defineComponent({
                 v-model={this.userCred.user_password}
                 placeholder="Your password…"
               />
-              <button>Log into your account</button>
+              <button onClick={()=>{
+                this.router.push("/dashboard")
+              }}>Log into your account</button>
             </form>
             <p class="main_login_forgotpassword" onClick={this.forgotPassword}>
               Forgot password?
