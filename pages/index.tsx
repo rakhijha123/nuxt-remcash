@@ -4,7 +4,7 @@ import Example from "./example";
 export default defineComponent({
   setup(props, ctx) {
     const handleExampleClickedData = (data:string) =>{
-      console.log(data)
+      alert(data)
     };
     return {
       handleExampleClickedData
@@ -14,7 +14,7 @@ export default defineComponent({
       return <div>
         <h1>Welcome to remcash home.</h1>
         <NuxtLink to={"/login"}>Login</NuxtLink>
-        <Example data={["hgchjwd","khgcsi","kjjgci"]} handleExampleClickedData={this.handleExampleClickedData}/>
+        <Example data={["sample1","sample2","sample3"]} handleExampleClickedData={this.handleExampleClickedData}/>
       </div>
     }
 });
