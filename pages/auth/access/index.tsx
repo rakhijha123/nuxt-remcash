@@ -3,7 +3,7 @@ import RamecashLogo from "@/assets/svg/logo01.svg";
 import Wallet from "@/assets/svg/wallet.svg";
 import PayBills from "@/assets/svg/pay_bills.svg";
 import MoneyTransfer from "@/assets/svg/instant_money_tranfer.svg";
-import NuxtLink from "~/plugins/nuxt-link";
+import NuxtLink from "@/plugins/nuxt-link";
 import { useRouter } from "vue-router";
 
 export default defineComponent({

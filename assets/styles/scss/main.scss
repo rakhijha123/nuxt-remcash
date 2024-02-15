@@ -9,8 +9,9 @@
 @import "./base/base";
 
 // components
-@import "./modules/login/login";
+@import "./modules/auth/access.scss";
 @import "./layouts/navbar.scss";
+
 // dashboard components
 @import "./modules/dashboard/dashboard";
 @import "./layouts/dashboard/sidebar.scss";

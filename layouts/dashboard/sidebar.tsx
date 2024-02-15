@@ -70,7 +70,7 @@ export default defineComponent({
         sidebar.value = false;
       };
       if(active.value === "Log Out"){
-        router.push("/login")
+        router.push("/auth/access")
       }
     });
     watch(sidebar,()=>{
@@ -104,7 +104,7 @@ export default defineComponent({
           {this.context.bottom.map((item) => {
             return (
               <button key={item.name} class="dashboard-sidebar-item" onClick={()=>{
-               this.router.push("/login")
+               this.router.push("/auth/access")
               }}>
                <span>
                   <FontAwesomeIcon icon={item.icon} />
