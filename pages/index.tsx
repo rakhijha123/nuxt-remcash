@@ -13,7 +13,7 @@ export default defineComponent({
     render () {
       return <div>
         <h1>Welcome to remcash home.</h1>
-        <NuxtLink to={"/auth/login"}>Login</NuxtLink>
+        <NuxtLink to={"/auth/access"}>Login</NuxtLink>
         <Example data={["sample1","sample2","sample3"]} handleExampleClickedData={this.handleExampleClickedData}/>
       </div>
     }
