@@ -61,6 +61,7 @@
     background-color: var(--bg-primary-light);
     box-shadow: rgba(100, 100, 111, 0.3) 0px 0px 24px 5px;
     flex: 0.7;
+    overflow-y: scroll;
     position: relative;
     @include transiton3(flex, 0.3, ease);
     @include respond(tab) {
