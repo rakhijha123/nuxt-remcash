@@ -8,6 +8,7 @@ import { useRouter } from "vue-router";
 
 export default defineComponent({
   setup() {
+    const register = ref(false);
     // router
     const router = useRouter();
     // left box carousel content
@@ -61,6 +62,7 @@ export default defineComponent({
       });
     });
     return {
+      register,
       leftScrollContent,
       leftScrollContentPosition,
       userCred,
@@ -71,9 +73,9 @@ export default defineComponent({
   },
   render() {
     return (
-      <div class="main_login">
-        <div class="main_login_left">
-          <div class="main_login_left-top">
+      <div class="main_auth">
+        <div class="main_auth_left">
+          <div class="main_auth_left-top">
             <img
               src={this.leftScrollContent[this.leftScrollContentPosition].img}
               alt=""
@@ -82,7 +84,7 @@ export default defineComponent({
             />
           </div>
 
-          <div class="main_login_left-bottom">
+          <div class="main_auth_left-bottom">
             <h2>
               {this.leftScrollContent[this.leftScrollContentPosition].heading}
             </h2>
@@ -94,14 +96,14 @@ export default defineComponent({
             </p>
           </div>
         </div>
-        <div class="main_login_right">
-          <div class="main_login_form">
-            <div class="main_login_logo">
+        <div class="main_auth_right">
+          <div class="main_auth_form">
+            <div class="main_auth_logo">
               <img src={RamecashLogo} alt="" />
               <p>Remcash</p>
             </div>
-            <div class="main_login_logintext">
-              <h2>Log in</h2>
+            <div class="main_auth_logintext">
+              <h2>{this.register ? "Register" : "Log in"}</h2>
               <p>(Please fill the information below)</p>
             </div>
             {/*Login form*/}
@@ -109,32 +111,33 @@ export default defineComponent({
               <label>Phone number</label>
               <input
                 type="text"
-                class="main_login_input"
+                class="main_auth_input"
                 v-model={this.userCred.user_id}
               placeholder="For example: 49570350469"
               />
               <label>Password</label>
               <input
                 type="password"
-                class="main_login_input"
+                class="main_auth_input"
                 v-model={this.userCred.user_password}
                 placeholder="Your password…"
               />
+              
               <button onClick={()=>{
                 this.router.push("/dashboard")
               }}>Log into your account</button>
             </form>
-            <p class="main_login_forgotpassword" onClick={this.forgotPassword}>
+            <p class="main_auth_forgotpassword" onClick={this.forgotPassword}>
               Forgot password?
             </p>
-            <p class="main_login_reg-login">
+            <p class="main_auth_reg-login">
               Don't have an account?{" "}
               <span>
                 <NuxtLink to="/signup">Rigister here</NuxtLink>
               </span>
             </p>
           </div>
-          <div class="main_login_background">
+          <div class="main_auth_background">
             <img src={BackgroundImage} alt="" />
           </div>
         </div>
