@@ -91,8 +91,8 @@ export default defineComponent({
             <div style={{width:"25px",height:"25px",backgroundColor:"#E4EFFA",borderRadius:"50%",position:"relative",bottom:"8px"}}></div>
             <div style={{width:"25px",height:"25px",backgroundColor:"#E4EFFA",borderRadius:"50%",position:"relative",bottom:"8px"}}></div>
           </div>
-          <div class="main_auth_form" style={{marginTop:"30px"}}>
-            <div class="main_auth_logo" >
+          <div class="main_auth_form form_register" >
+            <div class="main_auth_logo" style={{margin:"0 0 20px 0"}}>
               <img src={RamecashLogo} alt="" />
               <p>Remcash</p>
             </div>

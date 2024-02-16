@@ -29,6 +29,12 @@
     }
 };
 
+.form_register{
+    @include respond(mobile){
+        margin-top: 0px;
+    }
+}
+
 .colors{
     background-color: #E4EFFA;
     animation: colorChange 1s infinite;
