@@ -1,3 +1,7 @@
+/*
+author: kirankumar@hexafoldtech.com
+*/
+
 import Navbar from "@/layouts/navbar";
 import Sidebar from "@/layouts/dashboard/sidebar";
 import { useSidebar } from "@/composables/states";

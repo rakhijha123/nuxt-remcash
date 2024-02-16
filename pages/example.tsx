@@ -1,6 +1,7 @@
+/**
+ * author : kirankumar.challagiri@hexafoldtech.com
+ */
 import type { PropType } from "vue";
-
-
 interface ExampleProps {
     data: string[];
     handleExampleClickedData:(item:string) => void;

@@ -5,9 +5,9 @@ author: kirankumar@hexafoldtech.com
 import Wallet from "@/assets/svg/wallet.svg";
 import PayBills from "@/assets/svg/pay_bills.svg";
 import MoneyTransfer from "@/assets/svg/instant_money_tranfer.svg";
-import Login from "@/components/auth/login";
 import BackgroundImage from "@/assets/svg/bg_glob.svg";
 import RamecashLogo from "@/assets/svg/logo01.svg";
+import Register from "@/components/auth/register";
 
 export default defineComponent({
   setup() {
@@ -85,12 +85,18 @@ export default defineComponent({
           </div>
         </div>
         <div class="main_auth_right">
-          <div class="main_auth_form">
-            <div class="main_auth_logo">
+          <div style={{margin:"30px auto 0 auto",width:"350px",height:'10px',backgroundColor:"#E4EFFA",display:"flex",flexDirection:"row",justifyContent:"space-between",marginBottom:"50px"}}>
+            <div style={{width:"25px",height:"25px",borderRadius:"50%",position:"relative",bottom:"8px"}} class="colors"></div>
+            <div style={{width:"25px",height:"25px",backgroundColor:"#E4EFFA",borderRadius:"50%",position:"relative",bottom:"8px"}}></div>
+            <div style={{width:"25px",height:"25px",backgroundColor:"#E4EFFA",borderRadius:"50%",position:"relative",bottom:"8px"}}></div>
+            <div style={{width:"25px",height:"25px",backgroundColor:"#E4EFFA",borderRadius:"50%",position:"relative",bottom:"8px"}}></div>
+          </div>
+          <div class="main_auth_form" style={{marginTop:"-10px"}}>
+            <div class="main_auth_logo" >
               <img src={RamecashLogo} alt="" />
               <p>Remcash</p>
             </div>
-               <Login/>
+               <Register/>
           </div>
           <div class="main_auth_background">
             <img src={BackgroundImage} alt="" />
