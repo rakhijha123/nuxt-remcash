@@ -29,11 +29,7 @@
     }
 };
 
-.form_register{
-    @include respond(mobile){
-        margin-top: 45px;
-    }
-}
+
 
 .colors{
     background-color: #E4EFFA;

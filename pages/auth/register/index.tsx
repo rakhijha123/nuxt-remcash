@@ -85,14 +85,14 @@ export default defineComponent({
           </div>
         </div>
         <div class="main_auth_right">
+          <div class="main_auth_form" >
           <div style={{margin:"30px auto 0 auto",width:"350px",height:'10px',backgroundColor:"#E4EFFA",display:"flex",flexDirection:"row",justifyContent:"space-between",marginBottom:"50px"}}>
             <div style={{width:"25px",height:"25px",borderRadius:"50%",position:"relative",bottom:"8px"}} class="colors"></div>
             <div style={{width:"25px",height:"25px",backgroundColor:"#E4EFFA",borderRadius:"50%",position:"relative",bottom:"8px"}}></div>
             <div style={{width:"25px",height:"25px",backgroundColor:"#E4EFFA",borderRadius:"50%",position:"relative",bottom:"8px"}}></div>
             <div style={{width:"25px",height:"25px",backgroundColor:"#E4EFFA",borderRadius:"50%",position:"relative",bottom:"8px"}}></div>
           </div>
-          <div class="main_auth_form form_register" >
-            <div class="main_auth_logo" style={{margin:"0 0 20px 0"}}>
+            <div class="main_auth_logo" style={{margin:"0 0 50px 0"}}>
               <img src={RamecashLogo} alt="" />
               <p>Remcash</p>
             </div>

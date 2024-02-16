@@ -3,8 +3,11 @@
   flex-direction: row;
   min-height: 100vh;
   max-height: max-content;
-  overflow: hidden;
+  overflow-y: auto;
   font-size: 1.6rem;
+  @include respond(mobile){
+    // margin-bottom: 250px;
+  }
   &_left {
     flex: 0.3;
     background: linear-gradient(
@@ -69,11 +72,13 @@
     }
   }
   &_form {
+    min-height: 100vh;
     height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @include absCenter();
+    position: relative;
+    margin: 0 auto;
     width: 350px;
     z-index: 1;
   }
@@ -131,7 +136,7 @@
   &_reg-login {
     width: 100%;
     text-align: center;
-    padding: 40px 0 0 0;
+    padding: 40px 0 50px 0;
     span {
       font-weight: bold;
       cursor: pointer;
