@@ -8,7 +8,6 @@ export default defineComponent({
     },
     setup(props, ctx) {
         const sidebar = useSidebar();
-
         return {
             sidebar
         }
