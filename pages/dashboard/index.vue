@@ -1,5 +1,5 @@
 <!-- 
-  * author: kirankumar@hexafoldtech.com
+  * author: kirankumar.challagiri@hexafoldtech.com
  -->
 <template>
   <div class="dashboard">

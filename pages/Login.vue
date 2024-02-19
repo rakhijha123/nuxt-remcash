@@ -1,8 +1,7 @@
 
 <!-- 
-  * author: kirankumar@hexafoldtech.com
+  * author: kirankumar.challagiri@hexafoldtech.com
  -->
-
 <template>
   <div class="main_auth">
     <div class="main_auth_left">

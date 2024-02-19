@@ -1,3 +1,7 @@
+<!-- 
+  * author: kirankumar.challagiri@hexafoldtech.com
+ -->
+
 <template>
   <div :class="sidebar.$state.sidebar ? 'dashboard-sidebar' : 'dashboard-sidebar dashboard-sidebar-inactive'">
     <div class="dashboard-sidebar-top">
