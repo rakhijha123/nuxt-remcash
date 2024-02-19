@@ -65,6 +65,14 @@ export default defineComponent({
       ],
     });
     const active = ref("Home");
+    const handleActive = () =>{
+      const route = active.value.toLocaleLowerCase().split(" ").join("-");
+      if(route == "home"){
+        router.push(`/dashboard`);
+        return
+      }
+      router.push(`/dashboard/${route}`)
+    }
     watch(active,()=>{
       if(window.innerWidth <= 768){
         sidebar.value = false;
@@ -80,7 +88,8 @@ export default defineComponent({
       context,
       sidebar,
       active,
-      router
+      router,
+      handleActive
     };
   },
   render() {
@@ -91,6 +100,7 @@ export default defineComponent({
             return (
               <button key={item.name} class="dashboard-sidebar-item" onClick={()=>{
                 this.active = item.name;
+                this.handleActive();
               }}>
                 <span>
                   <FontAwesomeIcon icon={item.icon} />
