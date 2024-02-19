@@ -2,14 +2,22 @@
   <div >
     <Navbar class="navbar-position-fixed"/>
     <Sidenav />
-    <main class="layout-expand">
-      <slot />
-    </main>
+    <div class="layout-default">
+      <div :class="store.$state.sidebar ?'layout-default-main' : 'layout-default-main layout-default-main-inactive'">
+        <slot />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup >
-import Sidenav from "@/layouts/Sidenav";
-import Navbar from "@/layouts/Navbar";
+import { useGlobalStore } from "@/store/global";
+import Sidenav from "@/layouts/Sidenav/index.vue";
+import Navbar from "@/layouts/Navbar/index.vue";
+components:{
+  Sidenav,
+  Navbar
+}
+const store = useGlobalStore();
 
 </script>

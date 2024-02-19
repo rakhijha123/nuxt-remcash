@@ -1,6 +1,22 @@
-.layout-expand{
+.layout-default{
     background-color: var(--bg-primary);
     width: 100%;
     min-height: 100vh;
     height: max-content;
+    padding-bottom: 150px;
+    position:relative;
+    &-main{
+        margin: 50px 20px 20px 270px;
+        min-height: 50vh;
+        transition: all 0.3s ease;
+        @include respond(mobile){
+            margin: 60px 20px 20px 20px;
+        }
+        &-inactive{
+            margin: 60px 20px 20px 80px;
+            @include respond(mobile){
+                margin: 60px 20px 20px 20px;
+            }
+        }
+    }
 }
