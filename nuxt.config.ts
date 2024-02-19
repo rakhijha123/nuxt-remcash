@@ -4,8 +4,9 @@ export default defineNuxtConfig({
     head: {
       title: "Nova-Gas",
     },
+    
   },
   devtools: { enabled: false },
-  css: ["@/assets/scss/index.scss"],
+  css: ["@/assets/scss/index.scss","remixicon/fonts/remixicon.css"],
   modules: ["@pinia/nuxt",'@element-plus/nuxt'],
 })

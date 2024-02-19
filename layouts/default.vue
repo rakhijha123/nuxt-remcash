@@ -1,8 +1,8 @@
 <template>
   <div >
+    <Navbar class="navbar-position-fixed"/>
     <Sidenav />
-    <main>
-      <Navbar />
+    <main class="layout-expand">
       <slot />
     </main>
   </div>

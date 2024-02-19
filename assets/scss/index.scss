@@ -2,8 +2,13 @@
 // mixins 
 @import "./abstract/mixins";
 
+// layouts
+@import "./layouts/navbar";
+@import "./layouts/sidebar";
 // base
 @import "./base/base";
+@import "./base/class";
+
 
 // components
 @import "login/login.scss";
