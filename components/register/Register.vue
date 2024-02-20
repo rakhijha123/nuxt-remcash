@@ -52,7 +52,7 @@
    <p class="main_auth_reg-login">
      Already user?{{" "}}
      <span>
-       <NuxtLink to="/auth/access">
+       <NuxtLink to="/login">
        Login here
        </NuxtLink>
      </span>
