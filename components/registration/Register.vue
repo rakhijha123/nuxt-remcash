@@ -4,7 +4,7 @@
      <h2>Register</h2>
      <p>(Please fill the information below)</p>
    </div>
-   <form @submit.prevent="">
+   <form @submit.prevent="registerForm">
      <label>Last name</label>
      <input
        type="text"
@@ -44,7 +44,6 @@
          {{" "}} of Remcash.</p>
      </div>
      <button
-       @click=""
      >
        Confirm and proceed
      </button>
@@ -61,6 +60,7 @@
 </template>
 
 <script setup lang="ts">
+const emit = defineEmits();
  const router = useRouter();
     const terms = ref({
       checked:false
@@ -73,8 +73,7 @@
       email:"",
     });
     // Login form
-    const registerForm = (e: any) => {
-      e.preventDefault();
-      console.log(userCred.value);
+    const registerForm = () => {
+     emit('registerDetails',userCred.value)
     };
 </script>
